@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     screens: {
@@ -18,7 +19,19 @@ module.exports = {
       '2xl': '1920px',
       // => @media (min-width: 1536px) { ... }
     },
-    extend: {},
+    extend: {
+      colors: {
+        light: '#f1f1f1',
+        dark: '#121212',
+        boxDark: '#1d1d1d',
+
+        inputDark: '#373737',
+        inputLight: '#f5f5f5',
+
+        arrowBoxDark: '#373737',
+        arrowBoxLight: '#6b7280',
+      },
+    },
   },
   plugins: [],
 };

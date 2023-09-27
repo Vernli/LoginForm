@@ -1,39 +1,32 @@
 import { BiSolidLeftArrow, BiSolidRightArrow } from 'react-icons/bi';
-import { useState } from 'react';
-import CreateAccountBtn from './CreateAccountBtn';
+import { useEffect, useState } from 'react';
 
-function ArrowBtn({ defaultMode, dark, light }) {
+function ArrowBtn() {
   const [buttonIcon, setButtonIcon] = useState(<BiSolidRightArrow />);
   let [clicked, setClicked] = useState(false);
   let [display, setDisplay] = useState(true);
 
-  const handleButtonClick = () => {
+  useEffect(() => {
     if (clicked) {
-      setTimeout(() => {
-        setDisplay(true);
-      }, 650);
-    } else {
       setTimeout(() => {
         setDisplay(false);
       }, 500);
+    } else {
+      setTimeout(() => {
+        setDisplay(true);
+      }, 400);
     }
-  };
+  }, [clicked]);
+
+  const handleButtonClick = () => {};
 
   return (
     <div
-      className="h-10 p-2 rounded-l-full text-white flex items-center justify-center absolute bottom-20 lg:bottom-10 right-0 transition-all delay-500 bg-arrowBox"
+      className="h-10 p-2 rounded-l-full bg-arrowBoxLight dark:bg-arrowBoxDark shadow-md shadow-dark flex items-center justify-center absolute bottom-20 lg:bottom-10 right-0 transition-all delay-400 "
       style={
         clicked
-          ? defaultMode
-            ? {
-                width: '40px',
-              }
-            : {
-                width: '40px',
-              }
-          : defaultMode
           ? {
-              width: '200px',
+              width: '40px',
             }
           : {
               width: '200px',
@@ -44,7 +37,6 @@ function ArrowBtn({ defaultMode, dark, light }) {
         className="text-2xl text-blue-400 "
         onClick={() => {
           setClicked((clicked) => !clicked);
-          handleButtonClick();
           clicked
             ? setButtonIcon(
                 <BiSolidRightArrow className="hover:translate-x-[2px] delay-75 transition-all" />
@@ -52,11 +44,12 @@ function ArrowBtn({ defaultMode, dark, light }) {
             : setButtonIcon(
                 <BiSolidLeftArrow className="hover:-translate-x-[2px] delay-75 transition-all" />
               );
+          handleButtonClick();
         }}
       >
         {buttonIcon}
       </button>
-      {display ? <CreateAccountBtn /> : <p></p>}
+      {display ? <p className="ml-3">Create Account!</p> : <p></p>}
     </div>
   );
 }
