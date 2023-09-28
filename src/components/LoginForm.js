@@ -1,17 +1,17 @@
 function LoginForm() {
   return (
-    <form className="flex flex-col items-center w-full space-y-2">
+    <form className="flex flex-col items-center w-full space-y-2 relative">
       <input
         type="email"
         className="p-2 w-3/4 outline-none rounded-md border border-black text-black bg-inputLight dark:text-white dark:bg-inputDark focus:border-b-2 shadow-sm shadow-dark focus:border-b-blue-500"
         placeholder="E-mail"
-        required="true"
+        required={+true}
       />
       <input
         type="password"
         className="p-2 w-3/4 outline-none rounded-md border border-black text-black bg-inputLight dark:text-white dark:bg-inputDark shadow-sm shadow-dark focus:border-b-2 focus:border-b-blue-500"
         placeholder="Password"
-        required="true"
+        required={+true}
       />
       <button
         type="submit"

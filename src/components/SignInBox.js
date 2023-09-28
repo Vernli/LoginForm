@@ -1,16 +1,17 @@
 import ChangeTheme from './ChangeTheme';
+import Box from './Box';
 import Logo from './Logo';
 import LoginForm from './LoginForm';
 import ArrowBtn from './ArrowBtn';
 
-function SignInBox() {
+function SignInBox({ onClick, onThemeChange, icon }) {
   return (
-    <div className="sm:w-full sm:h-full lg:w-1/4 lg:h-1/2 xl:w-1/4 xl:h-1/2 2xl:w-1/5 2xl:h-[35%] bg-white dark:bg-boxDark shadow-LightMode dark:shadow-DarkMode rounded-xl flex flex-col items-center justify-center relative">
+    <Box>
       <Logo />
+      <ChangeTheme onClick={onThemeChange} icon={icon} />
       <LoginForm />
-      <ArrowBtn />
-      <ChangeTheme />
-    </div>
+      <ArrowBtn onClick={onClick} text={'Create Account!'} />
+    </Box>
   );
 }
 
