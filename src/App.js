@@ -1,6 +1,6 @@
-import SignInBox from './components/SignInBox';
+import LogInBox from './components/LoginInBox';
 import { BiSolidSun, BiSolidMoon } from 'react-icons/bi';
-import RegisterBox from './components/RegisterBox';
+import SignUpBox from './components/SignUpBox';
 import Footer from './components/Footer';
 import { useState, useEffect } from 'react';
 
@@ -33,13 +33,13 @@ function App() {
   return (
     <div className="flex items-center justify-center w-screen h-screen relative bg-light dark:bg-dark text-dark dark:text-white">
       {!isRegisterForm ? (
-        <SignInBox
+        <LogInBox
           onClick={changeRegisterForm}
           onThemeChange={onThemeChange}
           icon={icon}
         />
       ) : (
-        <RegisterBox
+        <SignUpBox
           onClick={changeRegisterForm}
           onThemeChange={onThemeChange}
           icon={icon}

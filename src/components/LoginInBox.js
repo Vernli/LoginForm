@@ -4,16 +4,16 @@ import Logo from './Logo';
 import LoginForm from './LoginForm';
 import ArrowBtn from './ArrowBtn';
 
-function SignInBox({ onClick, onThemeChange, icon }) {
+function LogInBox({ onClick, onThemeChange, icon }) {
   return (
     <Box>
       <Logo />
       <ChangeTheme onClick={onThemeChange} icon={icon} />
       <LoginForm />
-      <ArrowBtn onClick={onClick} text={'Create Account!'} />
+      <ArrowBtn onClick={onClick} text={'Sign Up!'} />
     </Box>
   );
 }
 
-export default SignInBox;
+export default LogInBox;
 //

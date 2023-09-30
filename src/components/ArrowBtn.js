@@ -20,14 +20,14 @@ function ArrowBtn({ onClick, text }) {
 
   return (
     <div
-      className="h-10 p-2 rounded-l-full bg-arrowBoxLight dark:bg-arrowBoxDark shadow-md shadow-dark flex items-center justify-center absolute bottom-20 lg:bottom-10 right-0 transition-all delay-500 "
+      className="sm:h-8 md:h-10 p-2 rounded-l-full bg-arrowBoxLight dark:bg-arrowBoxDark shadow-md shadow-dark flex items-center justify-center absolute sm:bottom-14 md:bottom-20 lg:bottom-5 right-0 transition-all delay-500 "
       style={
         clicked
           ? {
               width: '40px',
             }
           : {
-              width: '200px',
+              width: '150px',
             }
       }
     >

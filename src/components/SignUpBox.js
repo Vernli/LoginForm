@@ -4,7 +4,7 @@ import Logo from './Logo';
 import RegisterForm from './RegisterForm';
 import ArrowBtn from './ArrowBtn';
 
-function RegisterBox({ onClick, onThemeChange, icon }) {
+function SignUpBox({ onClick, onThemeChange, icon }) {
   return (
     <Box>
       <Logo />
@@ -15,4 +15,4 @@ function RegisterBox({ onClick, onThemeChange, icon }) {
   );
 }
 
-export default RegisterBox;
+export default SignUpBox;
